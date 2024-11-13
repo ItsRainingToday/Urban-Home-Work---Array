@@ -1,0 +1,36 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] array1 = {3, 87, 12, 98, 2, 4, 66};
+        System.out.println("Вывести  элементы массива в обратном порядке:");
+        for (int i = array1.length -1; i >= 0; i--) {
+            System.out.print(array1[i] + " ");
+        }
+        System.out.println(" ");
+
+        System.out.println("Отсортировать массив по убыванию:");
+        int[] array2 = {3, 87, 12, 98, 2, 4, 66, 87, 12, 98,};
+        System.out.println(Arrays.toString(sortreversArray(array2)));
+
+        int[] array3 = {6, 117, 44, 5, 32, 81, 9};
+        System.out.println("Вывести в четные элементы массива:");
+        for (int i3 = 0; i3 < array3.length; i3++) {
+            if (array3[i3] % 2 == 0) {
+                System.out.print(array3[i3] + " ");
+            }
+        }
+    }
+    private static int[] sortreversArray(int[] array2) {
+        for (int i2 =0; i2 < array2.length; i2++) {
+            for (int j2 =0; j2 < array2.length -1; j2++) {
+                if (array2[j2] < array2[j2+1]) {
+                    int temp = array2[j2];
+                    array2[j2] = array2[j2+1];
+                    array2[j2+1] = temp;
+                }
+            }
+        }
+        return array2;
+    }
+}
